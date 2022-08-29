@@ -3,12 +3,15 @@ var userClickedPattern=[];
 var buttonColours=["red","blue","green","yellow"];
 var level=0;
 
-$(".btn").click(function(){
-    var userChosenColour=$(this).attr("id");
-    userClickedPattern.push(userChosenColour);
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
-    checkAnswer(userClickedPattern.length-1);
+$(".row .btn").click(function(){
+    if(level!==0)
+    {
+        var userChosenColour=$(this).attr("id");
+        userClickedPattern.push(userChosenColour);
+        playSound(userChosenColour);
+        animatePress(userChosenColour);
+        checkAnswer(userClickedPattern.length-1);
+    }
 });
 
 $(document).keydown(function(event){
@@ -64,4 +67,15 @@ function checkAnswer(currentLevel){
 function startOver(){
     level=0;
     gamePattern=[];
+}
+
+// For Mobile
+var cScreenWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+if(cScreenWidth<=1120)
+{
+    $("h1").text("Press START to begin");
+    $("#start-button").click(function(){
+        if(level===0)
+            nextSequence();
+    });
 }
