@@ -51,7 +51,7 @@ body {
   background-color: grey;
 }
 
-#start-button {
+.hidden {
   visibility: hidden;
 }
 
@@ -59,23 +59,32 @@ body {
 
 @media (max-width: 1120px){
   #level-title {
-    font-size: 2rem;
-    margin:  2.5%;
+    font-size: 5rem;
+    margin: 7% 4%;
+    height: 10rem;
   }
   #start-button {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
-    line-height: 3rem;
-    height: 3rem;
-    width: 5rem;
+    font-size: 2.5rem;
+    line-height: 10rem;
+    height: 10rem;
+    width: 20rem;
+    margin-top: 20rem;
     background-color: #FEF2BF;
     border: 5px solid black;
     border-radius: 25%;
-    visibility: visible;
   }
-  .btn{
-    height: 4rem;
-    width: 4rem;
+  .container {
+    width: 100%;
+    margin-top: 20rem;
+  }
+  .row {
+    padding: 0 5rem;
+    width: 50rem;
+  }
+  .btn {
+    height: 20rem;
+    width: 20rem;
     margin: 10px;
   }
 }
