@@ -14,7 +14,6 @@ body {
   display: block;
   width: 50%;
   margin: auto;
-
 }
 
 .btn {
@@ -50,4 +49,33 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+#start-button {
+  visibility: hidden;
+}
+
+/* Media Query BreakPoint */
+
+@media (max-width: 1120px){
+  #level-title {
+    font-size: 2rem;
+    margin:  2.5%;
+  }
+  #start-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    line-height: 3rem;
+    height: 3rem;
+    width: 5rem;
+    background-color: #FEF2BF;
+    border: 5px solid black;
+    border-radius: 25%;
+    visibility: visible;
+  }
+  .btn{
+    height: 4rem;
+    width: 4rem;
+    margin: 10px;
+  }
 }
