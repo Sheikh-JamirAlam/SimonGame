@@ -59,7 +59,14 @@ function checkAnswer(currentLevel){
         setTimeout(function(){
             $("body").removeClass("game-over");
         },200);
-        $("h1").text("Game Over, Press Any Key to Restart");
+        if(cScreenWidth<=1120)
+        {
+            $("h1").text("Game Over!\nClick on RESTART to try again");
+            $("#start-button").text("RESTART");
+            $("#start-button").removeClass("hidden");
+        }
+        else
+            $("h1").text("Game Over, Press Any Key to Restart");
         startOver();
     }
 }
@@ -71,11 +78,16 @@ function startOver(){
 
 // For Mobile
 var cScreenWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+
 if(cScreenWidth<=1120)
 {
+    $("#start-button").removeClass("hidden");
     $("h1").text("Press START to begin");
     $("#start-button").click(function(){
         if(level===0)
+        {
+            $("#start-button").addClass("hidden");
             nextSequence();
+        }
     });
 }
